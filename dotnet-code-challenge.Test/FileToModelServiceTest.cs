@@ -9,10 +9,11 @@ namespace dotnet_code_challenge.Test
     public class FileToModelServiceTest
     {
         [Theory]
-        [InlineData("", FileType.XML, typeof(XmlToModelService))]
-        [InlineData("", FileType.JSON, typeof(JsonToModelService))]
+        [InlineData("./FeedDAta/Caulfield_Race1.xml", FileType.XML, typeof(XmlToModelService))]
+        [InlineData("./FeedData/Wolferhampton_Race1.json", FileType.JSON, typeof(JsonToModelService))]
         public void Test1(string filePath, FileType type, Type outputType)
         {
+            
             // arrange & act
             IFileToModel filetoModel = FileToModelService.GetFileToModel(filePath, type);
             

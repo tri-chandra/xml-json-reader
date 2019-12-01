@@ -9,7 +9,8 @@ namespace dotnet_code_challenge.Services
         private string _xmlString;
         public XmlToModelService(string filePath)
         {
-//            _xmlString = System.IO.File.ReadAllText(filePath);
+            _xmlString = System.IO.File.ReadAllText(filePath);
+            var x = _xmlString;
         }
         
         public IEnumerable<Horse> GetHorses()
