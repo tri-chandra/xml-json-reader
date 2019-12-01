@@ -26,7 +26,7 @@ namespace dotnet_code_challenge.Services
             
             var horseTokens = token.SelectToken("RawData").SelectToken("Participants").Values<JObject>();
             IEnumerable<Horse> horses = horseTokens.Select(x => x.ToObject<Horse>());
-            var result = horses.Join<Horse, JObject, string, Horse>(
+            var result = horses.Join(
                 selections,
                 horse => horse.Id,
                 selection => selection.SelectToken("Tags").SelectToken("participant").Value<string>(),
